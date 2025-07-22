@@ -205,15 +205,17 @@ enum Axis {
   AXIS_COUNT_RPYT = AXIS_AUX_1,  // RPYT axis count
 };
 
-enum Feature {
-  FEATURE_RX_PPM     = 1 << 0,
-  FEATURE_RX_SERIAL  = 1 << 3,
+enum Feature
+{
+  FEATURE_RX_PPM = 1 << 0,
+  FEATURE_RX_PARALLEL_PWM = 1 << 1,
+      FEATURE_RX_SERIAL = 1 << 3,
   FEATURE_MOTOR_STOP = 1 << 4,
   FEATURE_SOFTSERIAL = 1 << 6,
-  FEATURE_GPS        = 1 << 7,
-  FEATURE_TELEMETRY  = 1 << 10,
-  FEATURE_AIRMODE    = 1 << 22,
-  FEATURE_RX_SPI     = 1 << 25,
+  FEATURE_GPS = 1 << 7,
+  FEATURE_TELEMETRY = 1 << 10,
+  FEATURE_AIRMODE = 1 << 22,
+  FEATURE_RX_SPI = 1 << 25,
   FEATURE_DYNAMIC_FILTER = 1 << 29,
 };
 
@@ -241,6 +243,10 @@ enum PinFunction {
 #ifdef ESPFC_INPUT
   PIN_INPUT_RX,
 #endif
+  PIN_INPUT_PWM_0,
+  PIN_INPUT_PWM_1,
+  PIN_INPUT_PWM_2,
+  PIN_INPUT_PWM_3,
   PIN_OUTPUT_0,
   PIN_OUTPUT_1,
   PIN_OUTPUT_2,
@@ -713,6 +719,10 @@ class ModelConfig
 #ifdef ESPFC_INPUT
       [PIN_INPUT_RX] = ESPFC_INPUT_PIN,
 #endif
+      [PIN_INPUT_PWM_0] = -1,  // Default disabled, user can configure
+      [PIN_INPUT_PWM_1] = -1,
+      [PIN_INPUT_PWM_2] = -1,
+      [PIN_INPUT_PWM_3] = -1,
       [PIN_OUTPUT_0] = ESPFC_OUTPUT_0,
       [PIN_OUTPUT_1] = ESPFC_OUTPUT_1,
       [PIN_OUTPUT_2] = ESPFC_OUTPUT_2,

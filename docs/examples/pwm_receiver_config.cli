@@ -1,0 +1,25 @@
+# ESP-FC 4-Channel PWM Receiver Configuration Example
+
+# Enable 4-channel PWM receiver feature
+feature_rx_parallel_pwm on
+
+# Configure PWM input pins (example for ESP32)
+# These are just examples - adjust pin numbers according to your wiring
+set pin_input_pwm_0 34  # Channel 1 (Roll)
+set pin_input_pwm_1 35  # Channel 2 (Pitch)
+set pin_input_pwm_2 32  # Channel 3 (Throttle)
+set pin_input_pwm_3 33  # Channel 4 (Yaw)
+
+# Make sure other RX features are disabled
+feature_rx_ppm off
+feature_rx_serial off
+feature_rx_spi off
+
+# Configure input ranges if needed (optional)
+# set input_0 0 1000 1500 2000 A 1500  # Roll channel
+# set input_1 1 1000 1500 2000 A 1500  # Pitch channel
+# set input_2 2 1000 1500 2000 A 1000  # Throttle channel
+# set input_3 3 1000 1500 2000 A 1500  # Yaw channel
+
+# Save configuration
+save

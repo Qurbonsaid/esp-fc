@@ -68,9 +68,21 @@ Tu unmap pin function use -1 as pin number
 
 ## Default PPM receiver pin mapping
 
-| Uart    | CLI name       | ESP32 | ESP32-S3 |
-|--------:|----------------|------:|---------:|
-| PPM     | `pin_input_rx` |  35   | 6        |
+| Function | CLI name       | ESP32 | ESP32-S3 |
+|---------:|----------------|------:|---------:|
+| PPM      | `pin_input_rx` |  35   | 6        |
+
+## Default 4-Channel PWM receiver pin mapping
+
+| Channel  | CLI name         | Default | Comment         |
+|---------:|------------------|--------:|-----------------|
+| 1 (Roll) | `pin_input_pwm_0`|   -1    | User configurable |
+| 2 (Pitch)| `pin_input_pwm_1`|   -1    | User configurable |
+| 3 (Throttle)| `pin_input_pwm_2`|   -1    | User configurable |
+| 4 (Yaw)  | `pin_input_pwm_3`|   -1    | User configurable |
+
+> [!NOTE]
+> PWM input pins are disabled by default (-1). Enable `feature_rx_parallel_pwm` and configure pins via CLI before use.
 
 ## Other pin functions
 

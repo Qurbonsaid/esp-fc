@@ -365,6 +365,7 @@ const Cli::Param * Cli::initialize(ModelConfig& c)
     Param(PSTR("feature_motor_stop"), &c.featureMask, 4),
     Param(PSTR("feature_rx_ppm"), &c.featureMask, 0),
     Param(PSTR("feature_rx_serial"), &c.featureMask, 3),
+    Param(PSTR("feature_rx_parallel_pwm"), &c.featureMask, 13),
     Param(PSTR("feature_rx_spi"), &c.featureMask, 25),
     Param(PSTR("feature_soft_serial"), &c.featureMask, 6),
     Param(PSTR("feature_telemetry"), &c.featureMask, 10),
@@ -626,6 +627,10 @@ const Cli::Param * Cli::initialize(ModelConfig& c)
 #ifdef ESPFC_INPUT
     Param(PSTR("pin_input_rx"), &c.pin[PIN_INPUT_RX]),
 #endif
+    Param(PSTR("pin_input_pwm_0"), &c.pin[PIN_INPUT_PWM_0]),
+    Param(PSTR("pin_input_pwm_1"), &c.pin[PIN_INPUT_PWM_1]),
+    Param(PSTR("pin_input_pwm_2"), &c.pin[PIN_INPUT_PWM_2]),
+    Param(PSTR("pin_input_pwm_3"), &c.pin[PIN_INPUT_PWM_3]),
     Param(PSTR("pin_output_0"), &c.pin[PIN_OUTPUT_0]),
     Param(PSTR("pin_output_1"), &c.pin[PIN_OUTPUT_1]),
     Param(PSTR("pin_output_2"), &c.pin[PIN_OUTPUT_2]),

@@ -152,6 +152,10 @@ Note that you don't have to enter all values, you can ommit last values if they 
 Default pin assignments for ESP32-S3 is listed below
 ```
 set pin_input_rx 6
+set pin_input_pwm_0 -1
+set pin_input_pwm_1 -1
+set pin_input_pwm_2 -1
+set pin_input_pwm_3 -1
 set pin_output_0 39
 set pin_output_1 40
 set pin_output_2 41

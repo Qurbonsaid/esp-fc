@@ -44,6 +44,16 @@ If you want to use Serial based receiver (SBUS,IBUS,CRSF), you need to allocate 
 
 Then go to the `Receiver` tab, and select `Receiver mode` and `Serial Receiver Provider`.
 
+To use 4-channel PWM receiver, enable the `feature_rx_parallel_pwm` feature via CLI and configure the pins:
+```
+feature_rx_parallel_pwm on
+set pin_input_pwm_0 <pin_number>  # Channel 1 (Roll)
+set pin_input_pwm_1 <pin_number>  # Channel 2 (Pitch) 
+set pin_input_pwm_2 <pin_number>  # Channel 3 (Throttle)
+set pin_input_pwm_3 <pin_number>  # Channel 4 (Yaw)
+save
+```
+
 To use ESP-NOW receiver, choose "SPI Rx (e.g. built-in Rx)" receiver mode in Receiver tab. You need compatible transmitter module. Read more about [ESP-FC Wireless Functions](/docs/wireless.md)
 
 ## Motor setup
@@ -166,8 +176,8 @@ Besides that most of Betaflight principles can be applied here according to PID 
 
 ### Receiver
 
-1. Not all protocols are implemented, currently only PPM, CRSF, SBUS, IBUS
-2. NoOnly CRSF telemetry and and rssi_adc
+1. Not all protocols are implemented, currently only PPM, 4-channel PWM, CRSF, SBUS, IBUS
+2. Only CRSF telemetry and rssi_adc
 3. RC deadband applies to RPY, no separate Yaw deadband
 
 ### Modes

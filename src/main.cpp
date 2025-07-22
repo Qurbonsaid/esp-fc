@@ -21,6 +21,15 @@
 #endif
 #include "Debug_Espfc.h"
 
+// ESP-FC Flight Controller
+// Supports various receiver types including:
+// - PPM (Pulse Position Modulation)
+// - 4-Channel PWM (Parallel PWM channels)
+// - CRSF (Crossfire)
+// - SBUS (Serial Bus)
+// - IBUS (Intelligent Bus)
+// - ESP-NOW (Wireless)
+
 #ifdef ESP32
 void IRAM_ATTR serialEventRun(void) {}
 #endif
