@@ -6,7 +6,7 @@ The mini, DIY, Low cost, ESP32 based, high performance flight controller for hob
 
 * Espressif targets (ESP32, ESP32-S3)
 * ESC protocols (PWM, Oneshot125/42, Multishot, Brushed, Dshot150/300/600 bidirectional)
-* PPM, SBUS, IBUS and CRSF Receivers
+* PWM, PPM, SBUS, IBUS and CRSF Receivers
 * Builtin ESP-NOW receiver and WiFi configuration [read more...](/docs/wireless.md)
 * SPI and I2C gyro modules support (MPU6050, MPU9250, ICM20602, BMI160)
 * Flight modes (ACRO, ANGLE, AIRMODE)
